@@ -26,7 +26,6 @@ public class ListUserController extends HttpServlet {
 	 */ 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("002");
 		resp.sendRedirect(Contants.FILE_JSP_PATH + "/ADM002.jsp");
 	}
 	/**
@@ -35,8 +34,7 @@ public class ListUserController extends HttpServlet {
 	 */ 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("002");
+		// điều hướng sang MH ADM002
 		resp.sendRedirect(Contants.FILE_JSP_PATH + "/jsp/ADM002.jsp");
 //		RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath() + "/View/jsp/ADM002.jsp");
 	}

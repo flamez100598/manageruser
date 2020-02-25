@@ -9,14 +9,14 @@ import java.sql.SQLException;
 import manageruser.entities.tbl_userEntity;
 
 /**
- * Description
+ * user data access interface
  * @author DungPham
  *
  */
 public interface Tbl_UserDao {
 	/**
 	 * get user by login_name
-	 * @param
+	 * @param username username need check
 	 * @return tbl_userEntity
 	 * @throws Exception 
 	 */

@@ -5,7 +5,7 @@
 package manageruser.utils;
 
 /**
- * Description
+ * Lớp chứa các hằng số
  * @author DungPham
  *
  */

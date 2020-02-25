@@ -22,10 +22,15 @@ import manageruser.utils.DatabaseProperties;
  *
  */
 public abstract class BaseDAOImpl implements BaseDao {
+	// khởi biến url lấy giá trị từ file Database.Properties
 	private String url = DatabaseProperties.getValueByKey("url").replaceAll("'", "");
+	// khởi biến user lấy giá trị từ file Database.Properties
 	private String user = DatabaseProperties.getValueByKey("user");
+	// khởi biến pass lấy giá trị từ file Database.Properties
 	private String pass = DatabaseProperties.getValueByKey("password");
+	// khởi biến driver lấy giá trị từ file Database.Properties
 	private String driver = DatabaseProperties.getValueByKey("driver");
+	// khai báo biến connection
 	protected Connection connect;
 	/**
 	 * Hàm mở kết nối đến DB 
@@ -38,16 +43,12 @@ public abstract class BaseDAOImpl implements BaseDao {
 	@Override
 	public void openConnect() throws SQLException {
 		try {
-			System.out.println("Open Connect 0");
-			System.out.println(url);
-			System.out.println(driver);
+			// khai báo class for JDBC
 			Class.forName(driver);
-			System.out.println("Open Connect 1");
-			System.out.println(user);
-			System.out.println(pass);
+			// khởi tạo kết nối gắn vào biến connect
 			connect = DriverManager.getConnection(url, user, pass);
-			System.out.println("Open Connect 2");
 		} catch (ClassNotFoundException e) {
+			// xử lý ngoại lệ khi xảy ra lỗi
 			System.out.println("Class: " + this.getClass().getName() + ", Method: "
 					+ e.getStackTrace()[0].getMethodName() + ", Error: " + e.getMessage());
 		}
@@ -131,6 +132,7 @@ public abstract class BaseDAOImpl implements BaseDao {
 				connect.setAutoCommit(isCommit);
 			}
 		} catch (SQLException e) {
+			// xử lý ngoại lệ khi xảy ra lỗi
 			System.out.println("BaseDaoImpl.setAutoCommit: " + e.getMessage());
 		}
 	}
