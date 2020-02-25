@@ -1,3 +1,2 @@
 build
-src/MessageErrorProperties.properties
-src/Database.properties
+src/.properties
