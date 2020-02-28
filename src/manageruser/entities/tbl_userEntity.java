@@ -11,7 +11,7 @@ import java.util.Date;
  * @author DungPham
  *
  */
-public class tbl_userEntity {
+public class tbl_userEntity extends tbl_detail_user_japanEntity {
 	private int user_id;
 	private int group_id;
 	private int rule;

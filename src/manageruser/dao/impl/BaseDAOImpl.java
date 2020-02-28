@@ -17,7 +17,7 @@ import manageruser.dao.BaseDao;
 import manageruser.utils.DatabaseProperties;
 
 /**
- * Base Dao 
+ * Base Dao Impl
  * @author DungPham
  *
  */

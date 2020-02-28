@@ -12,7 +12,7 @@
 		<servlet-name>login</servlet-name>
 		<url-pattern>/login.do</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>listUser</servlet-name>
 		<servlet-class>manageruser.controllers.ListUserController</servlet-class>
 	</servlet>

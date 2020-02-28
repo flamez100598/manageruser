@@ -1,6 +1,6 @@
 /**
  * Copyright(C) 2020  Luvina
- * BaseDao.java, Feb 23, 2020 PhuongAnhTT
+ * BaseDao.java, Feb 23, 2020 DungPham
  */
 package manageruser.dao;
 

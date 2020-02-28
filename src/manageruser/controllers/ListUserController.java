@@ -35,7 +35,7 @@ public class ListUserController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// điều hướng sang MH ADM002
-		resp.sendRedirect(Contants.FILE_JSP_PATH + "/jsp/ADM002.jsp");
+		resp.sendRedirect(Contants.FILE_JSP_PATH + "/ADM002.jsp");
 //		RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath() + "/View/jsp/ADM002.jsp");
 	}
 }

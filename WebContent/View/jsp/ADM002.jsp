@@ -18,8 +18,8 @@
 					<td width="80%"><img src="../images/logo-manager-user.gif"
 						alt="Luvina" />
 						<td>
-							<td align="left"><a href="ADM001.html">ã­ã°ã¢ã¦ã</a>
-								&nbsp; <a href="ADM002.html">ããã</a>
+							<td align="left"><a href="ADM001.jsp">ã­ã°ã¢ã¦ã</a>
+								&nbsp; <a href="ADM002.jsp">ããã</a>
 								<td>
 				</tr>
 			</table>

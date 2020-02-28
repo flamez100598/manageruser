@@ -1,6 +1,6 @@
 /**
  *  Copy right (C) 2020 Luvina
- * Tbl_UserDaoImpl.java, Feb 23, 2020 DungPham
+ * Tbl_UserDao.java, Feb 23, 2020 DungPham
  */
 package manageruser.dao;
 

@@ -20,6 +20,7 @@ import manageruser.logics.impl.Tbl_UserLogicImpl;
 import manageruser.utils.MessageErrorProperties;
 import manageruser.utils.Contants;
 import manageruser.validates.Validator;
+import manageruser.validates.loginValidate;
 
 /**
  * Servlet Login 
@@ -46,24 +47,11 @@ public class LoginController extends HttpServlet {
 		// biến check trường hợp nhập sai tên đăng nhập hoặc mật khẩu
 		boolean checkRedirect = false;
 		// khởi tạo biến lưu message
-		StringBuilder messError = new StringBuilder();
-		// kiểm tra biến nhập user chưa
-		if("".equals(username)) {
-			// gắn biến isNullTextBox = true
-			isNullTextBox = true;
-			// thêm message lỗi MSG006 trong file MessageError.Properties vào messError
-			messError.append(MessageErrorProperties.getValueByKey("MSG006"));
-			System.out.println(messError);
-		}
-		// kiểm tra nhập password chưa
-		if ("".equals(password)) {
-			// gắn biến isNullTextBox = true
-			isNullTextBox = true;
-			// thêm message lỗi MSG005 trong file MessageError.Properties vào messError
-			messError.append("<p style='margin:0;'>" + MessageErrorProperties.getValueByKey("MSG005") + "</p>");
-		}
+		String messError = "";
+		// kiểm tra biến nhập user va password chưa
+		messError = loginValidate.checkNullOrEmpty(username, password);
 		// kiểm tra nhập các trường dữ liệu trong textbox chưa
-    	if (!isNullTextBox) {
+    	if ("".equals(messError)) {
     		// bắt lỗi execption
     		try {
     			// khởi tạo giá trị cho biến tbl_uli
@@ -78,7 +66,7 @@ public class LoginController extends HttpServlet {
         		// kiểm tra nếu tài khoản k tồn tại trong db
         		else {
         			// gắn message từ file MessageError.Properties
-        			messError = new StringBuilder(MessageErrorProperties.getValueByKey("MSG001"));
+        			messError = MessageErrorProperties.getValueByKey("ER016");
         		}
     		} catch (Exception e) {
     			// in ra lỗi nếu có ngoại lệ
@@ -86,7 +74,7 @@ public class LoginController extends HttpServlet {
     		}
     	}
     	// set attribute cho lỗi để hiển thị ra JSP
-    	req.setAttribute("messageError", messError.toString());
+    	req.setAttribute("messageError", messError);
     	// kiểm tra nếu k thỏa mãn điều kiện chuyển hướng 
     	if (!checkRedirect) {
     		// điều hướng lại trang ADM001 
