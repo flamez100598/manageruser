@@ -13,6 +13,10 @@ import java.security.SecureRandom;
  * @author DungPham
  *
  */
+/**
+ * @author Admin
+ *
+ */
 public class Common {
 	/**
 	 * 
@@ -65,7 +69,18 @@ public class Common {
 		}
 		return generatedPassword;
 	}
+	
 	public static boolean CompareString(String str1, String str2) {
 		return str1.equals(str2);
+	}
+	/**
+	 * Tạo chuỗi paging
+	 * @param int totalUser tổng sô user
+	 * @param int limit số lượng cần hiển thị trên 1 trang
+	 * @return int[]
+	 */
+	public static int[] getListPaging(int totalUser, int limit, int currentPage) {
+		return null;
+		
 	}
 }

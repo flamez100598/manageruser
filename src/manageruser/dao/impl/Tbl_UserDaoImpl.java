@@ -40,7 +40,7 @@ public abstract class Tbl_UserDaoImpl extends BaseDAOImpl implements Tbl_UserDao
 				// khởi tạo object tbl_userEntity
 				user = new tbl_userEntity();
 				// query lấy giá trị login_name, pass, salt
-				String sql = "select login_name, pass, salt from tbl_user where login_name = ?";
+				String sql = "select login_name, password, salt from tbl_user where login_name = ?";
 				// tạo statement thực hiện query
 				PreparedStatement ps = con.prepareStatement(sql);
 				//gắn param cho query
@@ -52,7 +52,7 @@ public abstract class Tbl_UserDaoImpl extends BaseDAOImpl implements Tbl_UserDao
 					// lưu giá trị login_name lấy được từ db vào biến user
 					user.setLogin_name(rs.getString("login_name"));
 					// lưu giá trị pass lấy được từ db vào biến user
-					user.setPass(rs.getString("pass"));
+					user.setPass(rs.getString("password"));
 					// lưu giá trị salt lấy được từ db vào biến user
 					user.setSal(rs.getString("salt"));
 				}

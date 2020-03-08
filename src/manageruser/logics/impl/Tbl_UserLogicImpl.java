@@ -42,7 +42,7 @@ public class Tbl_UserLogicImpl extends Tbl_UserDaoImpl implements Tbl_UserLogic 
 			if (tbl_user != null) {
 				// khởi tạo biến pasHas được mã hóa từ password nhập từ bàn phím 
 				String passHas = Common.get_SHA_1_SecurePassword(password, tbl_user.getSal());
-//				System.out.println("pasHas:" +passHas);
+				System.out.println("pasHas:" +passHas);
 				// So sánh pasHas với mật khẩu lấy từ trong db
 				if (Common.CompareString(passHas, tbl_user.getPass())) {
 					// nếu bằng nhau gán check = true
